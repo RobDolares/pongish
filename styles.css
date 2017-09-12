@@ -1,0 +1,10 @@
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
