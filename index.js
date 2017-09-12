@@ -1,13 +1,21 @@
 let canvas;
 let canvasContext;
+let ballX = 50;
+let ballY = 50;
+let ballVeloX = 10;       //ball x velocity
+
 
 
 window.onload=()=>{
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
-  drawEverything();
-
+  let fps = 30;
+  setInterval(()=>{
+    moveEverything();
+    drawEverything();
+  },1000/fps);
 }
+
 
 function drawEverything(){
   // black bgc
@@ -31,4 +39,20 @@ function colorCircle (centerX, centerY, radius, drawColor){
 function colorRect(leftX, topY, width, height, drawColor){
   canvasContext.fillStyle = drawColor;
   canvasContext.fillRect(leftX, topY, width, height);
+}
+
+
+function moveEverything(){
+
+  ballX += ballVeloX;
+
+
+  //ball bouncing off left/right
+  if (ballX < 0) {
+    ballVeloX = -ballVeloX;
+  }
+  if (ballX > canvas.width) {
+    ballVeloX = -ballVeloX;
+  }
+
 }
