@@ -8,3 +8,7 @@ main {
   display: flex;
   justify-content: center;
 }
+
+canvas {
+  border: 5px solid black;
+}
