@@ -2,7 +2,7 @@ let canvas;
 let canvasContext;
 let ballX = 50;
 let ballY = 50;
-let ballVeloX = 8;       //ball x velocity
+let ballVeloX = 10;       //ball x velocity
 let ballVeloY = 6;        //ball y velocity
 let pad1Y = 200;
 let pad2Y = 200;
@@ -10,7 +10,7 @@ const padHeight = 100;    //paddle dimensions
 const padWidth = 10;
 let player1score = 0;
 let player2score = 0;
-let aiMoveSpeed = 6;
+let aiMoveSpeed = 7;
 
 
 
@@ -39,23 +39,23 @@ function playerScores(){
 // ***** reset gameball ***** //
 
 function reset(){
-  if (player1score === 1) {
+  if (player1score === 5) {
     ballVeloX = -(ballVeloX + 2) ;
     aiMoveSpeed += 2;
   } else if (player1score === 10){
     ballVeloX = -(ballVeloX + 2)
-    aiMoveSpeed += 2;
+    aiMoveSpeed ++;
   } else if (player1score === 15){
     ballVeloX = -(ballVeloX + 2)
-    aiMoveSpeed += 2;
+    aiMoveSpeed ++;
   } else if (player1score === 20){
     ballVeloX = -(ballVeloX + 2)
   }
 
   if (ballVeloY > 0) {
-    ballVeloY = -(Math.floor(Math.random()*15));
+    ballVeloY = -(Math.floor(Math.random()*8));
   } else {
-    ballVeloY = (Math.floor(Math.random()*15));
+    ballVeloY = (Math.floor(Math.random()*8));
   }
 
   ballX = canvas.width/2;
